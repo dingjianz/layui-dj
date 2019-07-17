@@ -6,19 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="./js/jquery-1.12.4.min.js"></script>
+  <script src="./js/q.js"></script>
   <script src="./layui/layui.js"></script>
   <link href="./layui/css/layui.css">
   <title>layUI</title>
 </head>
+<style>
+  /* * {
+    align-items: center;
+    cursor: pointer;
+  } */
+</style>
+
 
 <body>
-  <div>444</div>
+  <div class="test-div"></div>
   <ul>
     <li></li>
   </ul>
 
   <script>
     layui.use('layer', function () {
+      let delCodePop = function (id, stNo, ovNo, trobj) {
+        let str = `
+          <div style="display:flex;align-items:center;justify-content:center;flex-direction: column;">
+            <img src="./images/print_bg.png" style="width:100px"/>
+            <p style="font-size:18px;color:#333;">溯源码已生成：<span style="color:#64C3A4;">${300}</span>个</p>
+            <button style="width:200px;height:40px;background:#64C3A4;color:#FFF;font-size:16px;border:none;border-radius:5px;padding-top:20px;">打印溯源码</button>
+            <a style="font-size:14px;color:#999;margin-top:11px;cursor:pointer;">如何打印？</a>
+          </div>
+        `;
+        layer.open({
+          type: 1,
+          content: str,
+          title: ['', 'background:#fff;border:none;'],
+          area: ['490px', '310px'],
+          closeBtn: 1,
+          end: function () {
+            console.log(454)
+          }
+        });
+      }()
+      // layer.msg('起始时间不可等于截止时间',{time:2000});
+      // layer.load(2, {
+      //   shade: [0.3,'#000'] //0.1透明度的白色背景
+      // })
       // layer.open({
       //   type: 1,
       //   content: '传入任意的文本或html' //这里content是一个普通的String
@@ -27,18 +59,27 @@
       //   type: 2,
       //   content: '传入任意的文本或html' //这里content是一个普通的String
       // });
-      layer.confirm('你是男的女的？', {
-        btn: ['男', '女']
-      }, () => {
-        layer.msg('我也是男的', {icon: 1})
-      }, () => {
-        layer.msg('我也是女的', {
-          time: 2000,
-          btn: ['sdsd', '6666']
-        })
-      })
-
+      // layer.confirm('你是男的女的？', {
+      //   btn: ['男', '女']
+      // }, () => {
+      //   layer.msg('我也是男的', {icon: 1})
+      // }, () => {
+      //   layer.msg('我也是女的', {
+      //     time: 2000,
+      //     btn: ['sdsd', '6666']
+      //   })
+      // })
     });
+    // $(() => {
+    //     Q.reg(['dj', 'ddd'],function(){
+    //       console.log(arguments)
+    //       document.getElementsByClassName('test-div')[0].innerHTML='Hallo World';
+    //     });
+    //     Q.init({
+    //       key: '@',
+    //       index: 'dj'
+    //     })
+    //   })
   </script>
 </body>
 

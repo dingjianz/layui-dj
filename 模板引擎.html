@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./js/jquery-1.12.4.min.js"></script>
+  <script src="./js/q.js"></script>
+  <script src="./layui/layui.js"></script>
+  <link href="./layui/css/layui.css">
+  <title>layUI</title>
+  </script>
+</head>
+
+<body>
+  <div class="test-div"></div>
+  <ul>
+    <li></li>
+  </ul>
+
+  <script>
+    layui.use('layer', function () {
+      layer.load(1, {
+        shade: [0.5, 'black'] //0.1透明度的白色背景
+      });
+      //   // layer.open({
+      //   //   type: 1,
+      //   //   content: '传入任意的文本或html' //这里content是一个普通的String
+      //   // });
+      //   // layer.open({
+      //   //   type: 2,
+      //   //   content: '传入任意的文本或html' //这里content是一个普通的String
+      //   // });
+      //   layer.confirm('你是男的女的？', {
+      //     btn: ['男', '女']
+      //   }, () => {
+      //     layer.msg('我也是男的', {icon: 1})
+      //   }, () => {
+      //     layer.msg('我也是女的', {
+      //       time: 2000,
+      //       btn: ['sdsd', '6666']
+      //     })
+      //   })
+      // });
+      // $(() => {
+      //   Q.reg('dj',function(){
+      //     document.getElementsByClassName('test-div')[0].innerHTML='Hallo World';
+      //   });
+      //   Q.init({
+      //     key: '@',
+      //     index: 'dj'
+      //   })
+    })
+  </script>
+</body>
+
+</html>
