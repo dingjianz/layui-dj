@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>siblings</title>
+  <script src="./js/jquery-1.12.4.min.js"></script>
+  <script src="./js/q.js"></script>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <script src="./layui/layui.js"></script>
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .djdjdj .layui-layer-btn0 {
+      background-color: red !important;
+      color: green !important;
+    }
+  </style>
+</head>
+
+<body>
+  <i class="layui-icon layui-icon-tree"></i>
+  <button type="button" class="layui-btn">一个标准的按钮</button>
+  <a href="http://www.layui.com" class="layui-btn">一个可跳转的按钮</a>
+  <div class="layui-anim layui-anim-scale layui-anim-scale" style="background:red;width:100px;height:100px;"></div>
+  <div class="father">
+    <ul class="son1">
+      <li class="grandson1"></li>
+      <li class="grandson2"></li>
+      <li class="grandson3"></li>
+    </ul>
+    <p class="son2">son2</p>
+    <p class="son3">son3</p>
+  </div>
+  <script>
+    $(() => {
+      console.log($('.son1').siblings('.son3'))
+      console.log($('.father').find('.son2')[0])
+      let btn = document.getElementsByClassName('layui-btn')[0];
+      let btn2 = document.getElementsByClassName('layui-btn')[1];
+      btn.onclick = () => {
+        layui.use('layer', () => {
+          let layer = layui.layer;
+          layer.confirm('纳尼？', {
+            btn: ['按钮一', '按钮二', '按钮三'], //可以无限个按钮
+            skin: 'djdjdj'
+          }, function (index, layero) {//按钮【按钮一】的回调
+            console.log(111)
+            layer.close(index)
+          }, function (index) {//按钮【按钮二】的回调
+            
+            console.log(222)
+          },function (index, layero) {//按钮【按钮三】的回调
+              console.log(333)
+            });
+        })
+      }
+      btn2.onclick = () => {
+        layui.use('layer', () => {
+          let layer = layui.layer;
+          layer.confirm('纳尼？', {
+            btn: ['按钮一', '按钮二', '按钮三'], //可以无限个按钮
+            skin: 'djdjdj'
+          }, function (index, layero) {//按钮【按钮一】的回调
+            console.log(111)
+            layer.close(index)
+          }, function (index) {//按钮【按钮二】的回调
+            
+            console.log(222)
+          },function (index, layero) {//按钮【按钮三】的回调
+              console.log(333)
+            });
+        })
+      }
+    })
+  </script>
+</body>
+
+</html>
